@@ -41,7 +41,7 @@ export default function TextForm(props) {
         props.showAlert("Text Cleard succesfully", "success");
     }
     // a function to change lowercase
-    const handleLoerCase =()=>{
+    const handleLowerCase =()=>{
         let newText = text.toLowerCase();
         setText(newText)
         props.showAlert(" Converted in Lowercase succesfully", "success");
@@ -72,8 +72,19 @@ export default function TextForm(props) {
                         <textarea name="myBox"value={text} onChange={handleOnChnage} style={{color:props.mode === 'dark'?'white':'black',
                             backgroundColor:props.mode === 'dark'?'#01051e':'white'}} rows="8" id="myBox" className="form-control"></textarea>
                     </div>
+                    {/*<div class="form-check form-switch">
+                        <input class="form-check-input" onClick={handleUpperCase} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                        <label class="form-check-label" htmlFor="flexSwitchCheckDefault">Change in UpperCase</label>
+                    </div> <div class="form-check form-switch">
+                        <input class="form-check-input" onClick={handleLowerCase} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                        <label class="form-check-label" htmlFor="flexSwitchCheckDefault">Change in LowerCase</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" onClick={handleExtraSpace} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                        <label class="form-check-label" htmlFor="flexSwitchCheckDefault">Remove extra space</label>
+                    </div>*/}
                     <button className="btn btn-primary mx-2" onClick={handleUpperCase}>UpperCase</button>
-                    <button className="btn btn-primary mx-2" onClick={handleLoerCase}>LowerCase</button>
+                    <button className="btn btn-primary mx-2" onClick={handleLowerCase}>LowerCase</button>
                     <button className="btn btn-primary mx-2" onClick={handleclearText}>Clear Text</button>
                     <button className="btn btn-primary mx-2" onClick={handleExtraSpace}>Remove Extra Space</button>
                     <button className="btn btn-primary mx-2" onClick={handleCopyText}>Copy Text</button>
