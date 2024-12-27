@@ -1,10 +1,16 @@
 //import logo from './logo.svg';
 import './App.css';
 import Alert from './components/Alert';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, {useState} from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
@@ -39,14 +45,16 @@ function App() {
   }
   return (
     <>
+    <Router>
     <Navbar title="textUtilis"  about="About" mode={mode} toggleMode={toggleMode} btnText={btnText} />
     <Alert alert={alert}/>
     <div className="container">
-      <TextForm heading="Enter Text Here To Analyze" mode={mode} showAlert={showAlert} />
+      <Routes>
+        <Route exact path="/about" element={<About/>}/>
+        <Route exact path="/" element={<TextForm heading="Enter Text Here To Analyze" mode={mode} showAlert={showAlert} />}/> 
+      </Routes> 
     </div>
-    
-    {/* <About/>
-     */}
+    </Router>
     </>
   );
 }
